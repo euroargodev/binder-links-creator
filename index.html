@@ -6,9 +6,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Binder link generator &#8212; euroargodev documentation</title>
-    
+
   <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <link href="_static/css/index.css" rel="stylesheet">
+
+  <link rel="preload" as="font" type="font/woff" crossorigin href="_static/fonts/clearsans/WOFF/ClearSans-Regular.woff">
+  <link rel="preload" as="font" type="font/woff" crossorigin href="_static/fonts/clearsans/WOFF/ClearSans-Thin.woff">
+  <link rel="preload" as="font" type="font/woff" crossorigin href="_static/fonts/clearsans/WOFF/ClearSans-Light.woff">
+
+  <link href="_static/css/index-badge.css" rel="stylesheet">
 
   <link rel="stylesheet"
     href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
@@ -18,18 +24,23 @@
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css" />
 
-    <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="preload" as="script" href="_static/js/index.js">
+
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
+<!--    <script src="_static/underscore.js"></script>-->
+<!--    <script src="_static/doctools.js"></script>-->
     <script src="_static/link_gen/link.js"></script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/js/clipboard.js"></script>
+    <script src="_static/js/badge.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
+<!--    <meta id="badge-base-url" data-url="https://mybinder.org/">-->
+
 
   </head>
   <body>
@@ -47,8 +58,9 @@
               <div>
                 
   <div class="section" id="nbgitpuller-link-generator">
+<label><img src="_static/images/logo_binder.svg"></label>
 <h1>Binder/nbgitpuller link generator for euroargodev repo<a class="headerlink" href="#nbgitpuller-link-generator" title="Permalink to this headline">¶</a></h1>
-<p>Use the following form to create your own <code class="docutils literal notranslate"><span class="pre">binder/nbgitpuller</span></code> links.</p>
+<p>Use the following form to create your own <code class="docutils literal notranslate"><span class="pre">binder/nbgitpuller</span></code> links or badge</p>
 <!--<div class="admonition note">-->
 <!--<p class="admonition-title">Note</p>-->
 <!--<p>Consider using the <a class="reference external" href="https://github.com/yuvipanda/nbgitpuller-link-generator-webextension">nbgitpuller link generator browser extension</a>-->
@@ -73,7 +85,7 @@
             </li>
           </ul>
 
-          <div class="tab-content">
+          <div class="tab-content hidden">
             Copy the URL below and share your Binder with others:
             <div class="tab-pane fade show active" id="auth-default" role="tabpanel" aria-labelledby="tab-auth-default">
               <input type="text" readonly class="form-control form-control" id="default-link" name="auth-default-link" placeholder="Generated link appears here...">
@@ -207,6 +219,55 @@
           </div>
         </div>
 
+
+        <div class="form-group badges row">
+            <div class="dropdownmenu" id="toggle-badge-snippet2">
+              <label>Copy the URL below to share your Binder with others:</label>
+              <a id="badge-link2"></a>
+              <a href="#" title="show badge snippets"><span id="badge-snippet-caret2" class="glyphicon glyphicon-triangle-right"></span></a>
+            </div>
+
+            <div id="badge-snippets2" class="hidden">
+              <!--Link-->
+              <div  class="badge-snippet-row">
+                 <pre id="link-badge-snippet" data-default="blabla"></pre>
+                 <img class="icon" src="_static/images/link-icon.svg">
+                 <img class="icon clipboard"
+                    src="_static/images/copy-icon-black.svg"
+                    data-clipboard-target="#link-badge-snippet"
+                    alt="Copy link to clipboard">
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group badges row">
+            <div class="dropdownmenu" id="toggle-badge-snippet">
+              <label>Or paste text below into your README to show a Binder badge: <img id="badge" src="_static/images/badge_logo.png"></label>
+              <a id="badge-link"></a>
+              <a href="#" title="show badge snippets"><span id="badge-snippet-caret" class="glyphicon glyphicon-triangle-right"></span></a>
+            </div>
+
+            <div id="badge-snippets" class="hidden">
+              <!--Markdown section-->
+              <div  class="badge-snippet-row">
+                 <pre id="markdown-badge-snippet" data-default="Fill in the fields to see the markdown badge snippet."></pre>
+                 <img class="icon" src="_static/images/markdown-icon.svg">
+                 <img class="icon clipboard"
+                    src="_static/images/copy-icon-black.svg"
+                    data-clipboard-target="#markdown-badge-snippet"
+                    alt="Copy markdown link to clipboard">
+              </div>
+              <!--RST section-->
+              <div  class="badge-snippet-row">
+                  <pre id="rst-badge-snippet" data-default="Fill in the fields to see the rST badge snippet."></pre>
+                  <img class="icon" src="_static/images/rst-icon.svg">
+                  <img class="icon clipboard" src="_static/images/copy-icon-black.svg"
+                    data-clipboard-target="#rst-badge-snippet"
+                    alt="Copy rst link to clipboard">
+              </div>
+            </div>
+        </div>
+
     </form>
   </div>
 </div>
@@ -233,7 +294,7 @@
       </div>
     </div>
 
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <script src="_static/js/index.js"></script>
 
   </body>
 </html>

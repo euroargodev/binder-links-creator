@@ -29,7 +29,7 @@
     <link rel="preload" as="script" href="_static/js/index.js">
 
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+<!--    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>-->
     <script src="_static/jquery.js"></script>
 <!--    <script src="_static/underscore.js"></script>-->
 <!--    <script src="_static/doctools.js"></script>-->
@@ -145,6 +145,9 @@
             <div class="invalid-feedback">
               Must be a valid git URL
             </div>
+            <small class="form-text text-muted" id="hub-help-text">
+              The repository with notebooks you want to share or test online
+            </small>
           </div>
           <div class="col-sm-4">
             <div class="input-group" id="content-branch-group" hidden="true">
@@ -162,7 +165,7 @@
             <input class="form-control" type="text" id="filepath" placeholder="docs/index.ipynb"
               oninput="displayLink()">
             <small class="form-text text-muted">
-              This file or directory from within the repo will open when user clicks the link.
+              This file or directory from within the content repo will open when user clicks the link.
             </small>
           </div>
         </div>
@@ -225,7 +228,7 @@
               <!--Link-->
               <div  class="badge-snippet-row">
                  <pre id="link-badge-snippet" data-default="blabla"></pre>
-                 <img class="icon" src="_static/images/link-icon.svg">
+                  <button type="button" class="btn" id="launch-link"><i class="fas fa-external-link-alt"></i></button>
                  <img class="icon clipboard"
                     src="_static/images/copy-icon-black.svg"
                     data-clipboard-target="#link-badge-snippet"
@@ -233,6 +236,7 @@
               </div>
             </div>
         </div>
+
 
         <div class="form-group badges row">
             <div class="dropdownmenu" id="toggle-badge-snippet">
@@ -280,7 +284,7 @@
                 <span class="point point-orange">1</span>
               </div>
               <div class="col-md-7 front">
-                <span class="front-em">Enter your repository information</span><br />Provide in the above Git Content Repository a URL or a GitHub repository that contains Jupyter notebooks, as well as a branch, tag, or commit hash. Launch will build our Binder repository and clone the Content Repository. If you specify a path to a notebook file, the notebook will be opened in your browser after building.
+                <span class="front-em">Enter your repository information</span><br />Provide in the above Git Content Repository a URL or a GitHub repository that contains Jupyter notebooks, as well as a branch, tag, or commit hash. Click the <i class="fas fa-external-link-alt"></i> button will build a Binder repository and clone the Content Repository. If you specify a path to a notebook file, the notebook will be opened in your browser after building.
               </div>
             </div>
 

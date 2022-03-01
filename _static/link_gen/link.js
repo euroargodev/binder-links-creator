@@ -193,6 +193,9 @@ function displayLink() {
             $('#link-badge-snippet').text(url);
             $('#markdown-badge-snippet').text(makeBadgeMarkup(url, 'markdown'));
             $('#rst-badge-snippet').text(makeBadgeMarkup(url, 'rst'));
+            $("#launch-link").on('click', function(){
+                     window.open($("#badge-link2").attr('href'), '_blank');
+                });
         } else if (activeTab === "tab-auth-binder"){
             // FIXME: userName parsing using new URL(...) assumes a 
             // HTTP based repoUrl. Does it make sense to create a
@@ -207,6 +210,9 @@ function displayLink() {
             $('#link-badge-snippet').text(url);
             $('#markdown-badge-snippet').text(makeBadgeMarkup(url, 'markdown'));
             $('#rst-badge-snippet').text(makeBadgeMarkup(url, 'rst'));
+            $("#launch-link").on('click', function(){
+                     window.open($("#badge-link2").attr('href'), '_blank');
+                });
         }
     }
 }

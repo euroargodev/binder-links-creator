@@ -271,6 +271,40 @@
               
 
         </div>
+
+        <div id="how-it-works">
+            <h3 class="text-center">How it works</h3>
+
+            <div class="row">
+              <div class="col-md-1 col-md-offset-2 point-container">
+                <span class="point point-orange">1</span>
+              </div>
+              <div class="col-md-7 front">
+                <span class="front-em">Enter your repository information</span><br />Provide in the above Git Content Repository a URL or a GitHub repository that contains Jupyter notebooks, as well as a branch, tag, or commit hash. Launch will build our Binder repository and clone the Content Repository. If you specify a path to a notebook file, the notebook will be opened in your browser after building.
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-1 col-md-offset-2 point-container">
+                <span class="point point-red">2</span>
+              </div>
+              <div class="col-md-7 front">
+                  <span class="front-em"><a href="https://mybinder.org/">MyBinder</a> build a Docker image of the <a href="https://github.com/euroargodev/binder-sandbox">environment repository</a></span><br />You can select a branch to specify which environment you want to build. If an image has already been built for the repository, it will not be rebuilt. Then Binder will pull the Git Content Repository with <a href="https://jupyterhub.github.io/nbgitpuller/">nbgitpuller</a>.
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-1 col-md-offset-2 point-container">
+                <span class="point point-blue">3</span>
+              </div>
+              <div class="col-md-7 front">
+                <span class="front-em">Interact with your notebooks in a live environment!</span><br />A <a href="https://jupyterhub.readthedocs.io/en/latest/">JupyterHub</a> server will host your repository's content. <a href="https://mybinder.org/">MyBinder</a> offer you a reusable link and badge to your live repository that you can easily share with others.
+              </div>
+            </div>
+          </div>
+
+
+
     </div>
     <footer class="footer">
     <div class="container">

@@ -195,9 +195,15 @@ function displayLink() {
             // HTTP based repoUrl. Does it make sense to create a
             // BinderHub link for SSH URLs? Then let's fix this parsing.
             var userName = new URL(repoUrl).pathname.split('/')[1];
-            document.getElementById('binder-link').value = generateBinderUrl(
+            var url = generateBinderUrl(
                 hubUrl, userName, repoName, branch, urlPath, contentRepoUrl, contentRepoBranch
             );
+            document.getElementById('binder-link').value = url
+            $("#badge-link").attr('href', url);
+            $("#badge-link2").attr('href', url);
+            $('#link-badge-snippet').text(url);
+            $('#markdown-badge-snippet').text(makeBadgeMarkup(url, 'markdown'));
+            $('#rst-badge-snippet').text(makeBadgeMarkup(url, 'rst'));
         }
     }
 }
@@ -279,13 +285,45 @@ function main() {
       }
     }
 
+    $('#toggle-badge-snippet').on('click', function() {
+        const badgeSnippets = $('#badge-snippets');
+        if (badgeSnippets.hasClass('hidden')) {
+            badgeSnippets.removeClass('hidden');
+            $("#badge-snippet-caret").removeClass("glyphicon-triangle-right");
+            $("#badge-snippet-caret").addClass("glyphicon-triangle-bottom");
+        } else {
+            badgeSnippets.addClass('hidden');
+            $("#badge-snippet-caret").removeClass("glyphicon-triangle-bottom");
+            $("#badge-snippet-caret").addClass("glyphicon-triangle-right");
+        }
+
+        return false;
+    });
+
+    $('#toggle-badge-snippet2').on('click', function() {
+        const badgeSnippets = $('#badge-snippets2');
+        if (badgeSnippets.hasClass('hidden')) {
+            badgeSnippets.removeClass('hidden');
+            $("#badge-snippet-caret2").removeClass("glyphicon-triangle-right");
+            $("#badge-snippet-caret2").addClass("glyphicon-triangle-bottom");
+        } else {
+            badgeSnippets.addClass('hidden');
+            $("#badge-snippet-caret2").removeClass("glyphicon-triangle-bottom");
+            $("#badge-snippet-caret2").addClass("glyphicon-triangle-right");
+        }
+
+        return false;
+    });
+
     // Do an initial render, to make sure our disabled / enabled properties are correctly set
     render();
 
     // Start with the Binder tab:
     $("#tab-auth-binder").click()
+    $('#toggle-badge-snippet').click()
+    $('#toggle-badge-snippet2').click()
 
 }
 
 window.onload = main;
-
+// new ClipboardJS('.clipboard');

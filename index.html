@@ -54,12 +54,11 @@
     
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+        <img src="_static/images/euroargodev-icon.png" height="100px"><img src="_static/images/logo_binder_text.png" height="100px">
               <div>
                 
   <div class="section" id="nbgitpuller-link-generator">
-<label><img src="_static/images/logo_binder.svg"></label>
-<h1>Binder/nbgitpuller link generator for euroargodev repo<a class="headerlink" href="#nbgitpuller-link-generator" title="Permalink to this headline">¶</a></h1>
+<h1>Link/badge generator for euroargodev repositories on Binder<a class="headerlink" href="#nbgitpuller-link-generator" title="Permalink to this headline">¶</a></h1>
 <p>Use the following form to create your own <code class="docutils literal notranslate"><span class="pre">binder/nbgitpuller</span></code> links or badge</p>
 <!--<div class="admonition note">-->
 <!--<p class="admonition-title">Note</p>-->
@@ -74,13 +73,13 @@
 
           <ul class="nav nav-tabs justify-content-end" role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" id="tab-auth-default" data-toggle="tab" role="tab" href="#auth-default" aria-controls="auth-default" onclick="changeTab(this)">
-                <small>JupyterHub</small>
+              <a class="nav-link" id="tab-auth-binder" data-toggle="tab" role="tab" href="#auth-binder" aria-controls="auth-binder" onclick="changeTab(this)">
+                <small>MyBinder.org</small>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="tab-auth-binder" data-toggle="tab" role="tab" href="#auth-binder" aria-controls="auth-binder" onclick="changeTab(this)">
-                <small>Binder</small>
+              <a class="nav-link active" id="tab-auth-default" data-toggle="tab" role="tab" href="#auth-default" aria-controls="auth-default" onclick="changeTab(this)">
+                <small>JupyterHub</small>
               </a>
             </li>
           </ul>
@@ -152,7 +151,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="content-branch-prepend-label">branch</span>
               </div>
-              <input name="content-branch" id="content-branch" type="text" class="form-control" value="main" aria-label="Branch Name" aria-describedby="content-branch-prepend-label">
+              <input name="content-branch" id="content-branch" type="text" class="form-control" placeholder="main" aria-label="Branch Name" aria-describedby="content-branch-prepend-label">
             </div>
           </div>
          </div>

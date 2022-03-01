@@ -183,13 +183,16 @@ function displayLink() {
         }
 
         if (activeTab === "tab-auth-default") {
-            document.getElementById('default-link').value = generateRegularUrl(
+            var url = generateRegularUrl(
                 hubUrl, urlPath, repoUrl, branch
             );
-        } else if (activeTab === "tab-auth-canvas"){
-            document.getElementById('canvas-link').value = generateCanvasUrl(
-                hubUrl, urlPath, repoUrl, branch
-            );
+            document.getElementById('default-link').value = url
+            document.getElementById('binder-link').value = url
+            $("#badge-link").attr('href', url);
+            $("#badge-link2").attr('href', url);
+            $('#link-badge-snippet').text(url);
+            $('#markdown-badge-snippet').text(makeBadgeMarkup(url, 'markdown'));
+            $('#rst-badge-snippet').text(makeBadgeMarkup(url, 'rst'));
         } else if (activeTab === "tab-auth-binder"){
             // FIXME: userName parsing using new URL(...) assumes a 
             // HTTP based repoUrl. Does it make sense to create a

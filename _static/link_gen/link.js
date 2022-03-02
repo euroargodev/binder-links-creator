@@ -335,4 +335,6 @@ function main() {
 }
 
 window.onload = main;
-// new ClipboardJS('.clipboard');
+$(function () {
+    new Clipboard('.clipboard');
+});

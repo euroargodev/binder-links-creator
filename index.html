@@ -4,12 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Binder link generator &#8212; euroargodev documentation</title>
-    <link href="_static/css/theme.css" rel="stylesheet">
-    <link href="_static/css/index.css" rel="stylesheet">
     <link rel="preload" as="font" type="font/woff" crossorigin href="_static/fonts/clearsans/WOFF/ClearSans-Regular.woff">
     <link rel="preload" as="font" type="font/woff" crossorigin href="_static/fonts/clearsans/WOFF/ClearSans-Thin.woff">
     <link rel="preload" as="font" type="font/woff" crossorigin href="_static/fonts/clearsans/WOFF/ClearSans-Light.woff">
-    <link href="_static/css/index-badge.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="_static/css/theme.css">
+    <link rel="stylesheet" type="text/css" href="_static/css/index.css">
+    <link rel="stylesheet" type="text/css" href="_static/css/index-badge.css">
     <link rel="stylesheet"
       href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
     <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -20,18 +20,13 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="_static/css/blank.css" >
     <link rel="preload" as="script" href="_static/js/index.js">
-    <!--    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>-->
     <script src="_static/jquery.js"></script>
-    <!--    <script src="_static/underscore.js"></script>-->
-    <!--    <script src="_static/doctools.js"></script>-->
     <script src="_static/link_gen/link.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
-    <!--    <script src="_static/js/clipboard.js"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
     <script src="_static/js/badge.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
-    <!--    <meta id="badge-base-url" data-url="https://mybinder.org/">-->
   </head>
   <body>
     <div class="container-fluid" id="banner"></div>
@@ -45,12 +40,11 @@
                 <div class="section" id="nbgitpuller-link-generator">
                   <h1>Link/badge generator for euroargodev repositories on Binder<a class="headerlink" href="#nbgitpuller-link-generator" title="Permalink to this headline">¶</a></h1>
                   <p>Use the following form to create your own <code class="docutils literal notranslate"><span class="pre">binder/nbgitpuller</span></code> links or badge</p>
-                  <!--<div class="admonition note">-->
-                  <!--<p class="admonition-title">Note</p>-->
-                  <!--<p>Consider using the <a class="reference external" href="https://github.com/yuvipanda/nbgitpuller-link-generator-webextension">nbgitpuller link generator browser extension</a>-->
-                  <!--instead! Available for <a class="reference external" href="https://addons.mozilla.org/en-US/firefox/addon/nbgitpuller-link-generator/">Firefox</a> and-->
-                  <!--<a class="reference external" href="https://github.com/yuvipanda/nbgitpuller-link-generator-webextension#on-google-chrome&#45;&#45;chromium">Chrome</a>.</p>-->
-                  <!--</div>-->
+                  <div class="admonition note">
+                    <p class="admonition-title"><i class="fas fa-info-circle"></i> Note</p>
+                    <p>Consider using the <a class="reference external" href="https://github.com/yuvipanda/nbgitpuller-link-generator-webextension">nbgitpuller link generator browser extension</a> instead! Available for <a class="reference external" href="https://addons.mozilla.org/en-US/firefox/addon/nbgitpuller-link-generator/">Firefox</a> and
+                    <a class="reference external" href="https://github.com/yuvipanda/nbgitpuller-link-generator-webextension#on-google-chrome--chromium">Chrome</a>.</p>
+                  </div>
                   <div class="container">
                     <form id="linkgenerator" class="form needs-validation">
                       <div class="form-group">
@@ -255,7 +249,7 @@
                   <span class="point point-red">2</span>
                 </div>
                 <div class="col-md-11 front">
-                  <span class="front-em"><a href="https://mybinder.org/">MyBinder</a> build a Docker image of the <a href="https://github.com/euroargodev/binder-sandbox">environment repository</a></span><br />You can select a branch to specify which environment you want to build. If an image has already been built for the repository, it will not be rebuilt. Then Binder will pull the Git Content Repository with <a href="https://jupyterhub.github.io/nbgitpuller/">nbgitpuller</a>.
+                  <span class="front-em"><a href="https://staging.mybinder.org/">MyBinder</a> build a Docker image of the <a href="https://github.com/euroargodev/binder-sandbox">environment repository</a></span><br />You can select a branch to specify which environment you want to build. If an image has already been built for the repository, it will not be rebuilt. Then Binder will pull the Git Content Repository with <a href="https://jupyterhub.github.io/nbgitpuller/">nbgitpuller</a>.
                 </div>
               </div>
               <div class="row">
@@ -263,7 +257,7 @@
                   <span class="point point-blue">3</span>
                 </div>
                 <div class="col-md-11 front">
-                  <span class="front-em">Interact with your notebooks in a live environment!</span><br />A <a href="https://jupyterhub.readthedocs.io/en/latest/">JupyterHub</a> server will host your repository's content. <a href="https://mybinder.org/">MyBinder</a> offer you a reusable link and badge to your live repository that you can easily share with others.
+                  <span class="front-em">Interact with your notebooks in a live environment!</span><br />A <a href="https://jupyterhub.readthedocs.io/en/latest/">JupyterHub</a> server will host your repository's content. <a href="https://staging.mybinder.org/">MyBinder</a> offer you a reusable link and badge to your live repository that you can easily share with others.
                 </div>
               </div>
             </div>
@@ -271,8 +265,8 @@
           <footer class="footer col-9">
             <div class="container">
               <p>
-                By The nbgitpuller Team, modified by the Euroargodev team<br/>
-                &copy; Copyright 2021, The nbgitpuller Team.<br/>
+                By The nbgitpuller Team, modified by the <a href="@euroargodev/dev">Euroargodev team</a><br/>
+                &copy; Copyright 2021, The nbgitpuller Team. &copy; Copyright 2022, The Euroargodev Team.<br/>
               </p>
             </div>
           </footer>

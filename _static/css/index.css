@@ -8906,7 +8906,7 @@ dd {
 }
 .admonition,
 div.admonition {
-    margin: 1.5625em auto;
+    /* margin: 1.5625em auto; */
     padding: 0 0.6rem 0.8rem;
     overflow: hidden;
     page-break-inside: avoid;
@@ -8950,7 +8950,7 @@ div.admonition > .admonition-title:before {
     color: rgba(var(--pst-color-admonition-default), 1);
     font-family: Font Awesome\5 Free;
     font-weight: 900;
-    content: var(--pst-icon-admonition-default);
+    /*content: var(--pst-icon-admonition-default);*/
 }
 .admonition > .admonition-title + *,
 div.admonition > .admonition-title + * {
@@ -9045,7 +9045,7 @@ div.admonition.tip > .admonition-title {
 .admonition.tip > .admonition-title:before,
 div.admonition.tip > .admonition-title:before {
     color: rgba(var(--pst-color-admonition-tip), 1);
-    content: var(--pst-icon-admonition-tip);
+    /*content: var(--pst-icon-admonition-tip);*/
 }
 .admonition.important,
 div.admonition.important {
@@ -9058,7 +9058,7 @@ div.admonition.important > .admonition-title {
 .admonition.important > .admonition-title:before,
 div.admonition.important > .admonition-title:before {
     color: rgba(var(--pst-color-admonition-important), 1);
-    content: var(--pst-icon-admonition-important);
+    /*content: var(--pst-icon-admonition-important);*/
 }
 .admonition.note,
 div.admonition.note {
@@ -9071,7 +9071,7 @@ div.admonition.note > .admonition-title {
 .admonition.note > .admonition-title:before,
 div.admonition.note > .admonition-title:before {
     color: rgba(var(--pst-color-admonition-note), 1);
-    content: var(--pst-icon-admonition-note);
+    /*content: var(--pst-icon-admonition-note);*/
 }
 table.field-list {
     border-collapse: separate;

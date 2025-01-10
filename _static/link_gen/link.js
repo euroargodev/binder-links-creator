@@ -115,8 +115,8 @@ function changeTab(div) {
     var id = div.id;
 
     if (id.includes("binder")) {
-        hub.placeholder = "https://mybinder.org";
-        hub.value = "https://mybinder.org";
+        hub.placeholder = "https://staging.mybinder.org";
+        hub.value = "https://staging.mybinder.org";
         hub_help_text.hidden = true;
         hub.labels[0].innerHTML = "BinderHub URL";
 
